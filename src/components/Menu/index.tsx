@@ -14,7 +14,6 @@ export function Menu() {
   const [theme, setTheme] = useState<AvailableThemes>(() => {
     const storageTheme =
       (localStorage.getItem("theme") as AvailableThemes) || "dark";
-
     return storageTheme;
   });
 
@@ -23,12 +22,13 @@ export function Menu() {
     light: <MoonIcon />,
   };
 
-  function handleThemeChange() {
-    event?.preventDefault();
-    console.log("clicado");
+  function handleThemeChange(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) {
+    event.preventDefault();
+
     setTheme((prevTheme) => {
       const nextTheme = prevTheme === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", theme);
       return nextTheme;
     });
   }
@@ -43,32 +43,35 @@ export function Menu() {
       <a
         className={styles.menuLink}
         href="#"
-        title="Ir para home"
-        aria-label="Ir para home"
+        aria-label="Ir para a Home"
+        title="Ir para a Home"
       >
         <HouseIcon />
       </a>
+
       <a
         className={styles.menuLink}
         href="#"
-        title="Ver histórico"
-        aria-label="Ver histórico"
+        aria-label="Ver Histórico"
+        title="Ver Histórico"
       >
         <HistoryIcon />
       </a>
+
       <a
         className={styles.menuLink}
         href="#"
-        title="Configurações"
         aria-label="Configurações"
+        title="Configurações"
       >
         <SettingsIcon />
       </a>
+
       <a
         className={styles.menuLink}
         href="#"
-        title="Mudar tema"
-        aria-label="Mudar tema"
+        aria-label="Mudar Tema"
+        title="Mudar Tema"
         onClick={handleThemeChange}
       >
         {nextThemeIcon[theme]}
