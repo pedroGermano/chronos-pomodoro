@@ -33,10 +33,10 @@
   --text-muted: #aab3cc;
 
   --disabled: #555f7d;
-  --text-disabled: #aab3cc; 
+  --text-disabled: #aab3cc;
 }
 
-:root[data-theme='light'] {
+:root[data-theme="light"] {
   --gray-100: #0a0f1a;
   --gray-200: #181f2e;
   --gray-300: #272f43;
