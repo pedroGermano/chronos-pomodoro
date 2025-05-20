@@ -1,13 +1,13 @@
 import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
-import { Cycles } from "../Cycles";
-import { DefaultInput } from "../DefaultInput";
 import { useRef } from "react";
-import { TaskModel } from "../../models/TaskModel";
+import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
+import { TaskModel } from "../../models/TaskModel";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
+import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaulButton";
-import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import { DefaultInput } from "../DefaultInput";
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
